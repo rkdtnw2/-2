@@ -20,9 +20,6 @@
       --primary-2:#8a5cff;
       --primary-3:#4fd8ff;
       --shadow:0 20px 50px rgba(0,0,0,.28);
-      --radius-xl:28px;
-      --radius-lg:20px;
-      --radius-md:16px;
       --max:1280px;
     }
 
@@ -83,8 +80,7 @@
       width:48px;
       height:48px;
       border-radius:16px;
-      background:
-        linear-gradient(135deg, rgba(255,79,159,.95), rgba(138,92,255,.95));
+      background:linear-gradient(135deg, rgba(255,79,159,.95), rgba(138,92,255,.95));
       display:grid;
       place-items:center;
       font-weight:800;
@@ -95,9 +91,7 @@
       flex:0 0 auto;
     }
 
-    .brand-text{
-      min-width:0;
-    }
+    .brand-text{min-width:0}
 
     .brand-title{
       font-size:1rem;
@@ -163,10 +157,10 @@
         linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03)),
         linear-gradient(135deg, rgba(255,79,159,.12), rgba(138,92,255,.08) 45%, rgba(79,216,255,.08));
       box-shadow:var(--shadow);
-      padding:42px 36px;
-      min-height:320px;
+      padding:48px 36px;
+      min-height:420px;
       display:grid;
-      grid-template-columns:1.25fr .85fr;
+      grid-template-columns:1.1fr .9fr;
       gap:28px;
       align-items:center;
     }
@@ -215,15 +209,16 @@
       color:#fff;
       font-size:.9rem;
       font-weight:700;
-      margin-bottom:16px;
+      margin-bottom:18px;
     }
 
     .hero-title{
       margin:0;
-      font-size:clamp(2rem, 5vw, 3.5rem);
-      line-height:1.08;
-      letter-spacing:-0.04em;
+      font-size:clamp(3rem, 7vw, 5.2rem);
+      line-height:0.98;
+      letter-spacing:-0.06em;
       font-weight:900;
+      max-width:700px;
     }
 
     .hero-title .accent{
@@ -233,56 +228,17 @@
       color:transparent;
     }
 
-    .hero-desc{
-      margin:18px 0 0;
-      color:var(--muted);
-      font-size:1.04rem;
-      line-height:1.7;
-      max-width:720px;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:26px;
-    }
-
-    .cta{
-      border:none;
-      padding:14px 18px;
-      border-radius:16px;
-      font-weight:800;
-      cursor:pointer;
-      transition:.25s ease;
-    }
-
-    .cta.primary{
-      color:white;
-      background:linear-gradient(135deg, var(--primary), var(--primary-2));
-      box-shadow:0 12px 24px rgba(255,79,159,.22);
-    }
-
-    .cta.secondary{
-      color:white;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.10);
-    }
-
-    .cta:hover{
-      transform:translateY(-2px);
-    }
-
     .hero-panel{
       position:relative;
       z-index:1;
       display:grid;
-      gap:14px;
+      gap:16px;
+      align-self:center;
     }
 
     .hero-shortcuts{
       display:grid;
-      gap:14px;
+      gap:16px;
     }
 
     .shortcut-card{
@@ -292,8 +248,8 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      padding:18px 20px;
-      border-radius:22px;
+      padding:22px 22px;
+      border-radius:24px;
       background:
         linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
         linear-gradient(135deg, rgba(255,79,159,.12), rgba(138,92,255,.10));
@@ -336,23 +292,21 @@
     }
 
     .shortcut-icon{
-      width:54px;
-      height:54px;
+      width:58px;
+      height:58px;
       border-radius:18px;
       display:grid;
       place-items:center;
       flex:0 0 auto;
-      font-size:1.45rem;
+      font-size:1.55rem;
       background:rgba(255,255,255,.10);
       border:1px solid rgba(255,255,255,.14);
     }
 
-    .shortcut-text{
-      min-width:0;
-    }
+    .shortcut-text{min-width:0}
 
     .shortcut-title{
-      font-size:1.04rem;
+      font-size:1.12rem;
       font-weight:900;
       margin-bottom:4px;
       letter-spacing:-0.02em;
@@ -360,31 +314,23 @@
 
     .shortcut-desc{
       color:var(--muted);
-      font-size:.9rem;
+      font-size:.95rem;
       line-height:1.5;
     }
 
     .shortcut-arrow{
-      font-size:1.2rem;
+      font-size:1.3rem;
       font-weight:900;
       color:#fff;
       flex:0 0 auto;
     }
 
     @keyframes shortcutUp{
-      from{
-        opacity:0;
-        transform:translateY(24px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+      from{opacity:0;transform:translateY(24px)}
+      to{opacity:1;transform:translateY(0)}
     }
 
-    .section{
-      margin-top:28px;
-    }
+    .section{margin-top:28px}
 
     .section-head{
       display:flex;
@@ -425,70 +371,6 @@
       gap:18px;
     }
 
-    .menu-card{
-      position:relative;
-      overflow:hidden;
-      min-height:240px;
-      border-radius:26px;
-      padding:24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)),
-        linear-gradient(135deg, rgba(255,79,159,.12), rgba(138,92,255,.10));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      transition:.28s ease;
-    }
-
-    .menu-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 26px 60px rgba(0,0,0,.34);
-    }
-
-    .menu-card::after{
-      content:"";
-      position:absolute;
-      right:-30px;
-      bottom:-30px;
-      width:140px;
-      height:140px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,255,255,.16), transparent 70%);
-      pointer-events:none;
-    }
-
-    .menu-icon{
-      width:60px;
-      height:60px;
-      display:grid;
-      place-items:center;
-      border-radius:18px;
-      font-size:1.7rem;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-      margin-bottom:18px;
-    }
-
-    .menu-title{
-      margin:0 0 10px;
-      font-size:1.3rem;
-      font-weight:900;
-    }
-
-    .menu-desc{
-      color:var(--muted);
-      line-height:1.65;
-      margin:0 0 18px;
-    }
-
-    .menu-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-weight:800;
-      color:#fff;
-    }
-
     .panel{
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
@@ -497,9 +379,7 @@
       box-shadow:var(--shadow);
     }
 
-    .hidden-view{
-      display:none !important;
-    }
+    .hidden-view{display:none !important}
 
     .fade-in{
       opacity:0;
@@ -622,9 +502,7 @@
       box-shadow:0 18px 40px rgba(0,0,0,.24);
     }
 
-    .slide-top{
-      padding:22px 22px 10px;
-    }
+    .slide-top{padding:22px 22px 10px}
 
     .slide-meta{
       display:flex;
@@ -694,9 +572,7 @@
       transition:.24s ease;
     }
 
-    .gallery img:hover{
-      transform:scale(1.02);
-    }
+    .gallery img:hover{transform:scale(1.02)}
 
     .edu-grid{
       display:grid;
@@ -713,9 +589,7 @@
       transition:.24s ease;
     }
 
-    .edu-card:hover{
-      transform:translateY(-4px);
-    }
+    .edu-card:hover{transform:translateY(-4px)}
 
     .edu-thumb{
       width:100%;
@@ -724,9 +598,7 @@
       background:#0e1323;
     }
 
-    .edu-body{
-      padding:18px;
-    }
+    .edu-body{padding:18px}
 
     .edu-cat{
       display:inline-flex;
@@ -818,6 +690,29 @@
       margin-top:10px;
     }
 
+    .cta{
+      border:none;
+      padding:14px 18px;
+      border-radius:16px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .cta.primary{
+      color:white;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow:0 12px 24px rgba(255,79,159,.22);
+    }
+
+    .cta.secondary{
+      color:white;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .cta:hover{transform:translateY(-2px)}
+
     .result-box{
       margin-top:18px;
       padding:20px;
@@ -860,9 +755,7 @@
       padding:24px;
     }
 
-    .lightbox.show{
-      display:flex;
-    }
+    .lightbox.show{display:flex}
 
     .lightbox-inner{
       position:relative;
@@ -904,6 +797,7 @@
     @media (max-width: 1100px){
       .hero{
         grid-template-columns:1fr;
+        min-height:auto;
       }
       .card-grid,
       .edu-grid{
@@ -926,13 +820,15 @@
         flex-direction:column;
       }
 
-      main{
-        padding-top:128px;
-      }
+      main{padding-top:128px}
 
       .hero{
-        padding:28px 22px;
+        padding:30px 22px;
         border-radius:28px;
+      }
+
+      .hero-title{
+        font-size:clamp(2.7rem, 12vw, 4rem);
       }
 
       .card-grid,
@@ -945,18 +841,14 @@
         align-items:flex-start;
       }
 
-      .nav{
-        width:100%;
-      }
+      .nav{width:100%}
 
       .nav-btn{
         flex:1 1 calc(50% - 10px);
         text-align:center;
       }
 
-      .search-box{
-        min-width:100%;
-      }
+      .search-box{min-width:100%}
     }
   </style>
 </head>
@@ -982,6 +874,7 @@
   </header>
 
   <main class="container">
+    <!-- HOME -->
     <section id="home-view" class="view-section fade-in show">
       <div class="hero">
         <div>
@@ -990,16 +883,6 @@
             <span class="accent">유림 텔레콤</span><br />
             현장대응 SOP
           </h1>
-          <p class="hero-desc">
-            신입 직원이 현장에서 바로 활용할 수 있도록 SOP 매뉴얼, 상품자료, 테스트를 한 화면에서 빠르게 확인할 수 있는 교육용 페이지입니다.
-            상단 메뉴로 원하는 영역만 볼 수 있고, 홈에서는 전체 메뉴를 한 번에 확인할 수 있습니다.
-          </p>
-
-          <div class="hero-actions">
-            <button class="cta primary" onclick="setView('sop')">SOP 바로가기</button>
-            <button class="cta secondary" onclick="setView('edu')">상품자료 보기</button>
-            <button class="cta secondary" onclick="setView('test')">테스트 시작</button>
-          </div>
         </div>
 
         <div class="hero-panel">
@@ -1039,63 +922,9 @@
           </div>
         </div>
       </div>
-
-      <section class="section">
-        <div class="section-head">
-          <div>
-            <h2 class="section-title">전체 메뉴</h2>
-            <p class="section-desc">홈에서는 전체 메뉴를 한 번에 볼 수 있고, 카드 클릭 시 해당 메뉴 화면으로 이동합니다.</p>
-          </div>
-        </div>
-
-        <div class="card-grid">
-          <div class="menu-card fade-in show" onclick="setView('sop')">
-            <div class="menu-icon">📘</div>
-            <h3 class="menu-title">SOP 매뉴얼</h3>
-            <p class="menu-desc">
-              상황별 응대 흐름, 업무 단계, 이미지 자료를 주제별로 확인할 수 있습니다.
-            </p>
-            <div class="menu-link">바로 이동 →</div>
-          </div>
-
-          <div class="menu-card fade-in show" onclick="setView('edu')">
-            <div class="menu-icon">🧾</div>
-            <h3 class="menu-title">상품자료</h3>
-            <p class="menu-desc">
-              신입이 설명하기 쉽게 핵심 포인트 중심으로 상품/서비스 자료를 카드 형태로 정리합니다.
-            </p>
-            <div class="menu-link">바로 이동 →</div>
-          </div>
-
-          <div class="menu-card fade-in show" onclick="setView('test')">
-            <div class="menu-icon">📝</div>
-            <h3 class="menu-title">테스트</h3>
-            <p class="menu-desc">
-              교육 후 바로 문제를 풀어보며 이해도를 체크하고 해설까지 확인할 수 있습니다.
-            </p>
-            <div class="menu-link">바로 이동 →</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card-grid">
-          <div class="panel">
-            <h3 style="margin:0 0 10px; font-size:1.15rem;">SOP 미리보기</h3>
-            <p style="margin:0; color:var(--muted); line-height:1.7;">챕터 → 주제 → 슬라이드 형식으로 정리되어 신입이 흐름을 빠르게 익힐 수 있습니다.</p>
-          </div>
-          <div class="panel">
-            <h3 style="margin:0 0 10px; font-size:1.15rem;">상품자료 미리보기</h3>
-            <p style="margin:0; color:var(--muted); line-height:1.7;">카테고리, 대표 설명, 핵심 포인트를 카드로 보여줘 실제 응대에 활용하기 좋습니다.</p>
-          </div>
-          <div class="panel">
-            <h3 style="margin:0 0 10px; font-size:1.15rem;">테스트 미리보기</h3>
-            <p style="margin:0; color:var(--muted); line-height:1.7;">문항 응시 후 점수와 정답, 해설까지 한 번에 볼 수 있도록 구성했습니다.</p>
-          </div>
-        </div>
-      </section>
     </section>
 
+    <!-- SOP -->
     <section id="sop-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1132,6 +961,7 @@
       </div>
     </section>
 
+    <!-- EDU -->
     <section id="edu-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1146,6 +976,7 @@
       </div>
     </section>
 
+    <!-- TEST -->
     <section id="test-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1230,18 +1061,25 @@
       const raw = safeText(url);
       if (!raw) return "";
 
-      if (/\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(raw)) return raw;
-      if (raw.includes("uc?export=view&id=")) return raw;
-      if (raw.includes("uc?export=download&id=")) return raw.replace("download", "view");
-
-      const fileMatch = raw.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
-      if (fileMatch?.[1]) {
-        return `https://drive.google.com/uc?export=view&id=${fileMatch[1]}`;
+      if (/^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)(\?.*)?$/i.test(raw)) {
+        return raw;
       }
 
-      const openMatch = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-      if (openMatch?.[1]) {
-        return `https://drive.google.com/uc?export=view&id=${openMatch[1]}`;
+      if (raw.includes("drive.google.com")) {
+        const fileMatch = raw.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+        if (fileMatch && fileMatch[1]) {
+          return `https://drive.google.com/thumbnail?id=${fileMatch[1]}&sz=w2000`;
+        }
+
+        const openMatch = raw.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+        if (openMatch && openMatch[1]) {
+          return `https://drive.google.com/thumbnail?id=${openMatch[1]}&sz=w2000`;
+        }
+
+        const ucMatch = raw.match(/uc\?export=(?:view|download)&id=([a-zA-Z0-9_-]+)/);
+        if (ucMatch && ucMatch[1]) {
+          return `https://drive.google.com/thumbnail?id=${ucMatch[1]}&sz=w2000`;
+        }
       }
 
       return raw;
@@ -1470,7 +1308,12 @@
           ${(item.images && item.images.length) ? `
             <div class="gallery">
               ${item.images.map(img => `
-                <img src="${escapeAttr(img)}" alt="${escapeAttr(item.topicTitle || 'SOP 이미지')}" onclick="openLightbox('${escapeJs(img)}')">
+                <img
+                  src="${escapeAttr(img)}"
+                  alt="${escapeAttr(item.topicTitle || 'SOP 이미지')}"
+                  onclick="openLightbox('${escapeJs(img)}')"
+                  onerror="this.style.display='none'"
+                >
               `).join("")}
             </div>
           ` : ""}
@@ -1574,7 +1417,13 @@
       area.innerHTML = data.map(item => `
         <article class="edu-card fade-in show">
           ${item.images[0] ? `
-            <img class="edu-thumb" src="${escapeAttr(item.images[0])}" alt="${escapeAttr(item.title || '상품자료 이미지')}" onclick="openLightbox('${escapeJs(item.images[0])}')">
+            <img
+              class="edu-thumb"
+              src="${escapeAttr(item.images[0])}"
+              alt="${escapeAttr(item.title || '상품자료 이미지')}"
+              onclick="openLightbox('${escapeJs(item.images[0])}')"
+              onerror="this.outerHTML='<div class=&quot;edu-thumb&quot; style=&quot;display:grid;place-items:center;color:#94a5c8;font-weight:700;&quot;>이미지 없음</div>'"
+            >
           ` : `
             <div class="edu-thumb" style="display:grid;place-items:center;color:#94a5c8;font-weight:700;">이미지 없음</div>
           `}
