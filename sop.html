@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>유림 텔레콤 SOP 매뉴얼</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+        <div class="brand-logo">YT</div>
+        <div class="brand-text">
+          <div class="brand-title">유림 텔레콤 현장대응 SOP</div>
+          <div class="brand-sub">SOP 매뉴얼</div>
+        </div>
+      </div>
 
+      <nav class="nav">
+        <button class="nav-btn" onclick="location.href='index.html'">홈</button>
+        <button class="nav-btn active">SOP 매뉴얼</button>
+        <button class="nav-btn" onclick="location.href='index.html#edu'">상품자료</button>
+        <button class="nav-btn" onclick="location.href='index.html#test'">테스트</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="panel">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">SOP 매뉴얼</h2>
+            <p class="section-desc">구글시트의 SOP 시트를 불러와 챕터와 주제별로 정리해 보여줍니다.</p>
+          </div>
+          <div class="badge" id="sop-count-badge">로딩중</div>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <span>🔎</span>
+            <input type="text" id="sop-search" placeholder="챕터 / 주제 / 내용 / 태그 검색" />
+          </div>
+          <button class="cta secondary" onclick="resetSopFilter()">전체 보기</button>
+        </div>
+
+        <div id="search-result-info" class="search-result-info"></div>
+
+        <div class="sop-layout">
+          <aside class="sidebar">
+            <h4>챕터</h4>
+            <div id="chapter-list" class="chapter-list"></div>
+
+            <div class="topics-wrap">
+              <h4 style="margin:0 0 14px;">주제</h4>
+              <div id="topic-list" class="topic-list"></div>
+            </div>
+          </aside>
+
+          <div>
+            <div id="sop-slide-area" class="slides"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+      <img id="lightbox-image" src="" alt="확대 이미지">
+    </div>
+  </div>
+
+  <script src="js/education.js"></script>
+</body>
+</html>
