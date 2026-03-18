@@ -50,7 +50,6 @@
       margin:0 auto;
     }
 
-    /* Header */
     .topbar{
       position:fixed;
       top:0;
@@ -155,7 +154,6 @@
       padding-bottom:60px;
     }
 
-    /* Hero */
     .hero{
       position:relative;
       overflow:hidden;
@@ -282,39 +280,108 @@
       gap:14px;
     }
 
-    .glass-card{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:24px;
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .hero-status{
+    .hero-shortcuts{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
       gap:14px;
     }
 
-    .status-box{
-      padding:18px;
-      border-radius:20px;
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08);
+    .shortcut-card{
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 20px;
+      border-radius:22px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
+        linear-gradient(135deg, rgba(255,79,159,.12), rgba(138,92,255,.10));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      opacity:0;
+      transform:translateY(24px);
+      animation:shortcutUp .7s ease forwards;
     }
 
-    .status-label{
-      font-size:.86rem;
+    .shortcut-card:nth-child(1){ animation-delay:.08s; }
+    .shortcut-card:nth-child(2){ animation-delay:.22s; }
+    .shortcut-card:nth-child(3){ animation-delay:.36s; }
+
+    .shortcut-card:hover{
+      transform:translateY(-4px) scale(1.01);
+      box-shadow:0 24px 50px rgba(0,0,0,.30);
+      border-color:rgba(255,255,255,.18);
+    }
+
+    .shortcut-card::before{
+      content:"";
+      position:absolute;
+      top:-30px;
+      right:-30px;
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,255,255,.18), transparent 68%);
+      pointer-events:none;
+    }
+
+    .shortcut-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .shortcut-icon{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      font-size:1.45rem;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+    }
+
+    .shortcut-text{
+      min-width:0;
+    }
+
+    .shortcut-title{
+      font-size:1.04rem;
+      font-weight:900;
+      margin-bottom:4px;
+      letter-spacing:-0.02em;
+    }
+
+    .shortcut-desc{
       color:var(--muted);
-      margin-bottom:10px;
+      font-size:.9rem;
+      line-height:1.5;
     }
 
-    .status-value{
+    .shortcut-arrow{
       font-size:1.2rem;
       font-weight:900;
+      color:#fff;
+      flex:0 0 auto;
     }
 
-    /* Sections */
+    @keyframes shortcutUp{
+      from{
+        opacity:0;
+        transform:translateY(24px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
     .section{
       margin-top:28px;
     }
@@ -422,7 +489,6 @@
       color:#fff;
     }
 
-    /* Content panels */
     .panel{
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
@@ -446,7 +512,6 @@
       transform:translateY(0);
     }
 
-    /* SOP */
     .toolbar{
       display:flex;
       flex-wrap:wrap;
@@ -633,7 +698,6 @@
       transform:scale(1.02);
     }
 
-    /* EDU */
     .edu-grid{
       display:grid;
       grid-template-columns:repeat(3, minmax(0,1fr));
@@ -708,7 +772,6 @@
       line-height:1.55;
     }
 
-    /* TEST */
     .test-box{
       display:grid;
       gap:16px;
@@ -777,7 +840,6 @@
       white-space:pre-line;
     }
 
-    /* Empty */
     .empty{
       padding:26px;
       border-radius:22px;
@@ -787,7 +849,6 @@
       border:1px dashed rgba(255,255,255,.12);
     }
 
-    /* Lightbox */
     .lightbox{
       position:fixed;
       inset:0;
@@ -832,7 +893,6 @@
       color:#111;
     }
 
-    /* Footer */
     .footer{
       margin-top:28px;
       text-align:center;
@@ -841,7 +901,6 @@
       padding:18px 0 4px;
     }
 
-    /* Responsive */
     @media (max-width: 1100px){
       .hero{
         grid-template-columns:1fr;
@@ -877,8 +936,7 @@
       }
 
       .card-grid,
-      .edu-grid,
-      .hero-status{
+      .edu-grid{
         grid-template-columns:1fr;
       }
 
@@ -924,8 +982,6 @@
   </header>
 
   <main class="container">
-
-    <!-- HOME -->
     <section id="home-view" class="view-section fade-in show">
       <div class="hero">
         <div>
@@ -947,32 +1003,38 @@
         </div>
 
         <div class="hero-panel">
-          <div class="glass-card">
-            <div style="font-weight:900; font-size:1.05rem; margin-bottom:12px;">운영 포인트</div>
-            <div style="color:var(--muted); line-height:1.75;">
-              • SOP 상황별 이미지 학습<br />
-              • 상품자료 카드형 정리<br />
-              • 테스트로 이해도 점검<br />
-              • 구글시트 수정 시 화면 자동 반영
+          <div class="hero-shortcuts">
+            <div class="shortcut-card" onclick="setView('sop')">
+              <div class="shortcut-left">
+                <div class="shortcut-icon">📘</div>
+                <div class="shortcut-text">
+                  <div class="shortcut-title">SOP 바로가기</div>
+                  <div class="shortcut-desc">상황별 응대 매뉴얼을 바로 확인합니다.</div>
+                </div>
+              </div>
+              <div class="shortcut-arrow">→</div>
             </div>
-          </div>
 
-          <div class="hero-status">
-            <div class="status-box">
-              <div class="status-label">SOP 데이터</div>
-              <div class="status-value" id="hero-sop-count">로딩중</div>
+            <div class="shortcut-card" onclick="setView('edu')">
+              <div class="shortcut-left">
+                <div class="shortcut-icon">🧾</div>
+                <div class="shortcut-text">
+                  <div class="shortcut-title">상품자료 보기</div>
+                  <div class="shortcut-desc">주요 상품과 설명 포인트를 빠르게 확인합니다.</div>
+                </div>
+              </div>
+              <div class="shortcut-arrow">→</div>
             </div>
-            <div class="status-box">
-              <div class="status-label">상품자료 데이터</div>
-              <div class="status-value" id="hero-edu-count">로딩중</div>
-            </div>
-            <div class="status-box">
-              <div class="status-label">테스트 문항</div>
-              <div class="status-value" id="hero-test-count">로딩중</div>
-            </div>
-            <div class="status-box">
-              <div class="status-label">상태</div>
-              <div class="status-value" id="hero-status-text">연결중</div>
+
+            <div class="shortcut-card" onclick="setView('test')">
+              <div class="shortcut-left">
+                <div class="shortcut-icon">📝</div>
+                <div class="shortcut-text">
+                  <div class="shortcut-title">테스트 시작</div>
+                  <div class="shortcut-desc">교육 후 이해도 점검을 바로 진행합니다.</div>
+                </div>
+              </div>
+              <div class="shortcut-arrow">→</div>
             </div>
           </div>
         </div>
@@ -1034,7 +1096,6 @@
       </section>
     </section>
 
-    <!-- SOP -->
     <section id="sop-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1071,7 +1132,6 @@
       </div>
     </section>
 
-    <!-- EDU -->
     <section id="edu-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1086,7 +1146,6 @@
       </div>
     </section>
 
-    <!-- TEST -->
     <section id="test-view" class="view-section section hidden-view fade-in">
       <div class="panel">
         <div class="section-head">
@@ -1116,7 +1175,6 @@
     </div>
   </main>
 
-  <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <div class="lightbox-inner">
       <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
@@ -1125,17 +1183,11 @@
   </div>
 
   <script>
-    /* =========================
-       Google Sheet 설정
-    ========================= */
     const SHEET_ID = "1irp_D1Sd8b1CJees0iO6iIzw_92BX3v70mW4e2MCQzw";
     const SOP_GID  = "655112432";
     const EDU_GID  = "153482899";
     const TEST_GID = "790084243";
 
-    /* =========================
-       상태
-    ========================= */
     let sopData = [];
     let eduData = [];
     let testData = [];
@@ -1145,9 +1197,6 @@
     let currentTopic = "";
     let dynamicAnswerKey = {};
 
-    /* =========================
-       공통 유틸
-    ========================= */
     function escapeHtml(value = "") {
       return String(value)
         .replaceAll("&", "&amp;")
@@ -1175,10 +1224,6 @@
 
     function uniq(arr) {
       return [...new Set(arr)];
-    }
-
-    function isNotEmpty(v) {
-      return safeText(v) !== "";
     }
 
     function normalizeDriveImageUrl(url = "") {
@@ -1238,13 +1283,6 @@
       return "";
     }
 
-    function showStatus(ok = true, message = "") {
-      document.getElementById("hero-status-text").textContent = ok ? (message || "정상") : (message || "오류");
-    }
-
-    /* =========================
-       뷰 전환
-    ========================= */
     function setView(view) {
       currentView = view;
 
@@ -1295,9 +1333,6 @@
       btn.addEventListener("click", () => setView(btn.dataset.view));
     });
 
-    /* =========================
-       SOP 가공
-    ========================= */
     function mapSopRows(rows) {
       return rows.map(row => {
         const chapter = findValueByAliases(row, [
@@ -1406,7 +1441,6 @@
       }
 
       filtered.sort((a,b) => a.order - b.order);
-
       document.getElementById("sop-count-badge").textContent = `${filtered.length}개 항목`;
 
       if (!filtered.length) {
@@ -1491,9 +1525,6 @@
       renderSopSlides(sopData);
     }
 
-    /* =========================
-       EDU 가공
-    ========================= */
     function mapEduRows(rows) {
       return rows.map(row => {
         const category = findValueByAliases(row, [
@@ -1563,9 +1594,6 @@
       `).join("");
     }
 
-    /* =========================
-       TEST 가공
-    ========================= */
     function mapTestRows(rows) {
       return rows.map((row, idx) => {
         const order = findValueByAliases(row, ["order", "순서", "번호", "no"]);
@@ -1682,9 +1710,6 @@
       document.getElementById("test-result-box").style.display = "none";
     }
 
-    /* =========================
-       Lightbox
-    ========================= */
     function openLightbox(src) {
       const box = document.getElementById("lightbox");
       const img = document.getElementById("lightbox-image");
@@ -1699,9 +1724,6 @@
       }
     }
 
-    /* =========================
-       문자열 유틸
-    ========================= */
     function slugify(str = "") {
       return String(str)
         .trim()
@@ -1721,20 +1743,12 @@
         .replaceAll("\n", "\\n");
     }
 
-    /* =========================
-       검색
-    ========================= */
     document.getElementById("sop-search").addEventListener("input", () => {
       renderSopSlides(sopData);
     });
 
-    /* =========================
-       초기 로드
-    ========================= */
     async function init() {
       try {
-        showStatus(true, "불러오는 중");
-
         const [sopRows, eduRows, testRows] = await Promise.all([
           fetchSheetRows(SOP_GID),
           fetchSheetRows(EDU_GID),
@@ -1745,12 +1759,6 @@
         eduData = mapEduRows(eduRows);
         testData = mapTestRows(testRows);
 
-        document.getElementById("hero-sop-count").textContent = `${sopData.length}개`;
-        document.getElementById("hero-edu-count").textContent = `${eduData.length}개`;
-        document.getElementById("hero-test-count").textContent = `${testData.length}문항`;
-
-        showStatus(true, "연결 완료");
-
         currentChapter = uniq(sopData.map(v => v.chapter).filter(Boolean))[0] || "";
         currentTopic = "";
 
@@ -1759,11 +1767,6 @@
         renderTest(testData);
       } catch (error) {
         console.error(error);
-        showStatus(false, "연결 오류");
-
-        document.getElementById("hero-sop-count").textContent = "오류";
-        document.getElementById("hero-edu-count").textContent = "오류";
-        document.getElementById("hero-test-count").textContent = "오류";
 
         document.getElementById("sop-slide-area").innerHTML = `
           <div class="empty">SOP 시트를 불러오지 못했습니다.<br>시트 공유 설정과 컬럼명을 확인해주세요.</div>
