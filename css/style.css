@@ -12,6 +12,7 @@
   --primary-3:#4fd8ff;
   --shadow:0 20px 50px rgba(0,0,0,.28);
   --max:1280px;
+  --header-height:96px;
 }
 
 *{box-sizing:border-box}
@@ -143,7 +144,7 @@ button,input{font-family:inherit}
 }
 
 main{
-  padding-top:118px;
+  padding-top:calc(var(--header-height) + 24px);
   padding-bottom:60px;
 }
 
@@ -374,6 +375,7 @@ main{
   border-radius:30px;
   padding:24px;
   box-shadow:var(--shadow);
+  scroll-margin-top:calc(var(--header-height) + 18px);
 }
 
 .hidden-view{display:none !important}
@@ -432,7 +434,7 @@ main{
   padding:18px;
   height:fit-content;
   position:sticky;
-  top:98px;
+  top:calc(var(--header-height) + 10px);
 }
 
 .sidebar h4{
@@ -492,6 +494,7 @@ main{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.08);
   transition:.26s ease;
+  scroll-margin-top:calc(var(--header-height) + 18px);
 }
 
 .slide-card:hover{
@@ -817,6 +820,10 @@ main{
 
 /* 태블릿 */
 @media (max-width: 1024px){
+  :root{
+    --header-height:110px;
+  }
+
   .hero{
     grid-template-columns:1fr;
     min-height:auto;
@@ -835,9 +842,13 @@ main{
 
 /* 모바일 */
 @media (max-width: 720px){
+  :root{
+    --header-height:190px;
+  }
+
   .topbar-inner{
     min-height:auto;
-    padding:14px 0;
+    padding:14px 0 16px;
     align-items:flex-start;
     flex-direction:column;
   }
@@ -853,17 +864,20 @@ main{
 
   .nav{
     width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
   }
 
   .nav-btn{
-    flex:1 1 calc(50% - 10px);
+    width:100%;
     text-align:center;
-    padding:11px 14px;
-    font-size:.9rem;
+    padding:12px 14px;
+    font-size:.95rem;
   }
 
   main{
-    padding-top:150px;
+    padding-top:calc(var(--header-height) + 18px);
   }
 
   .hero{
@@ -901,6 +915,10 @@ main{
   .shortcut-desc{
     font-size:.86rem;
     line-height:1.4;
+  }
+
+  .section{
+    margin-top:20px;
   }
 
   .section-head{
