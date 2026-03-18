@@ -222,3 +222,13 @@ async function initMainPage() {
 }
 
 window.addEventListener("DOMContentLoaded", initMainPage);
+function syncHeaderHeight() {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
+  const h = topbar.offsetHeight;
+  document.documentElement.style.setProperty("--header-height", `${h}px`);
+}
+
+window.addEventListener("load", syncHeaderHeight);
+window.addEventListener("resize", syncHeaderHeight);
+window.addEventListener("DOMContentLoaded", syncHeaderHeight);
